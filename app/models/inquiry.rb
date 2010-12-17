@@ -1,5 +1,9 @@
 class Inquiry < ActiveRecord::Base
 
+  has_one :inquiry_file, :as => :viewable, :dependent => :destroy
+
+  accepts_nested_attributes_for :inquiry_file, :reject_if => lambda { |f| f[:attachment].blank? }
+
   validates_presence_of :email
   validates_presence_of :message
 

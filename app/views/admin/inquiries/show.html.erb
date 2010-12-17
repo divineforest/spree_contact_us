@@ -13,6 +13,13 @@
 <p>
     <%= t(:message) %>: <%= h @inquiry.message %>
 </p>
+
+<p>
+	<% if @inquiry.inquiry_file %>
+	  <%= t("contact_us.attachment") %>: <%= link_to t("contact_us.download"), @inquiry.inquiry_file.attachment.url %>
+	<% end %>
+</p>
+
 <p>
     <%= link_to t(:back), collection_url %>
     | <%= button_to t("delete"), object_url(@inquiry), :confirm => t("confirm_delete"), :method => :delete %>

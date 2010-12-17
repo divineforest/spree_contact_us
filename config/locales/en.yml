@@ -24,3 +24,6 @@ en:
   send: "Send message"
   from: "From"
   header: "If this message is not for you, please ignore and delete it. To this message do not reply."
+  contact_us:
+    attachment: Attachment
+    download: Download
