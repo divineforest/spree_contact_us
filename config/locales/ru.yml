@@ -30,3 +30,12 @@ ru:
   contact_us:
     attachment: Файл
     download: Загрузить
+  activerecord:
+    attributes:
+      inquiry:
+        name: Имя
+        body: Сообщение
+        created_at: Дата создания
+        inquiry_type: Тип
+        order_no: Номер заказа
+

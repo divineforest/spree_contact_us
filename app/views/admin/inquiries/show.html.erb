@@ -1,17 +1,14 @@
+<% excluded_attributes = [:id, :updated_at, :message] %>
+<% @inquiry.attributes.reject { |name, value| excluded_attributes.include?(name.to_sym) }.each do |attribute_name, attribute_value| %>
+	<%# if attribute_value.present? %>
+	  <p>
+			<%= Inquiry.human_attribute_name(attribute_name) %>: <%= attribute_value %>
+		</p>
+	<%# end %>
+<% end %>
+
 <p>
-    <%= t(:name) %>: <%= @inquiry.name %>
-</p>
-<p>
-    <%= t(:email) %>: <%= @inquiry.email %>
-</p>
-<p>
-    <%= t(:type) %>: <%= @inquiry.inquiry_type %>
-</p>
-<p>
-    <%= "#{t(:order)} #{@inquiry.order_no}" unless @inquiry.order_no.blank? %>
-</p>
-<p>
-    <%= t(:message) %>: <%= h @inquiry.message %>
+	<%= t(:message) %>: <%= @inquiry.message %>
 </p>
 
 <p>
@@ -24,4 +21,3 @@
     <%= link_to t(:back), collection_url %>
     | <%= button_to t("delete"), object_url(@inquiry), :confirm => t("confirm_delete"), :method => :delete %>
 </p>
-</tr>

@@ -27,3 +27,11 @@ en:
   contact_us:
     attachment: Attachment
     download: Download
+  activerecord:
+    attributes:
+      inquiry:
+        name: Name
+        body: Message
+        created_at: Created at
+        inquiry_type: Type
+        order_no: Order No
